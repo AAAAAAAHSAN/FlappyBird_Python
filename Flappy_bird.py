@@ -3,7 +3,7 @@ import pygame, sys, random
 floor_y_pos = 512-112
 pygame.mixer.pre_init(frequency=44100, size=16, channels=1, buffer=512)
 pygame.init()
-screen_height = 512
+screen_height = 512  # edited by ahsan
 screen_width = 288
 screen = pygame.display.set_mode((1000, 1000))
 clock = pygame.time.Clock()
