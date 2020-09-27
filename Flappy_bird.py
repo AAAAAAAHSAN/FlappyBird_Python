@@ -5,7 +5,8 @@ pygame.mixer.pre_init(frequency=44100, size=16, channels=1, buffer=512)
 pygame.init()
 screen_height = 512  # edited by ahsan
 screen_width = 288
-screen = pygame.display.set_mode((1000, 1000))
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption('Flappy Bird By AHSAN')
 clock = pygame.time.Clock()
 game_font = pygame.font.Font('04B_19.ttf', 40)
 
@@ -78,10 +79,10 @@ def check_collision(pipes):
     for pipe in pipes:
         if bird_rect.colliderect(pipe):
             death_sound.play()
-            return True
+            return False
 
     if bird_rect.top <= -100 or bird_rect.bottom >= floor_y_pos:
-        return True
+        return False
 
     return True
 
